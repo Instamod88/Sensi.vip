@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensi Xitada | Gerador Inteligente</title>
+    <!-- Link para o CSS principal que contém estilos de neon e animações -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones para redes sociais (Font Awesome - necessário para os ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- TELA DE LOGIN (Visível inicialmente) -->
+    <div id="login-container">
+        <div class="neon-bg-overlay"></div>
+        <div class="login-box">
+            <!-- Animação de Entrada (Simulada no CSS) -->
+            <h2 class="title-animation">SENSI XITADA</h2>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" required value="Oliveira.2ss">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required value="hs70%">
+                </div>
+                
+                <!-- Placeholder para barra de pesquisa (Será ativada no gerador) -->
+                <!-- Em um ambiente real, este campo seria ocultado ou substituído -->
+                
+                <button type="submit" id="login-button" class="btn-neon">Acessar</button>
+            </form>
+            
+            <p id="login-message" class="message-error"></p>
+
+            <!-- Estrutura para as Redes Sociais (Ícones) -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/_oliveira.2ss?igsh=MXIxaHRybzFmbDV2Nw%3D%3D&utm_source=qr" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.tiktok.com/@oliveira.2ss?_r=1&_t=ZS-937eh6hXhiM" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DO GERADOR (Oculta inicialmente, aparece após login) -->
+    <div id="generator-container" style="display: none;">
+        <!-- Conteúdo do Gerador será injetado/renderizado pelo JavaScript (app.js) -->
+        <header>
+            <h1>Sensi Xitada // Dispositivo: <span id="device-display-name">Carregando...</span></h1>
+        </header>
+        
+        <main>
+            <!-- Área de Pesquisa -->
+            <section id="search-area">
+                <h3>Pesquisar Dispositivo</h3>
+                <input type="text" id="device-search-input" placeholder="Ex: iPhone 13, Samsung A54...">
+                <button id="search-button" class="btn-neon">Pesquisar</button>
+                <p id="search-result-info" class="info-text"></p>
+            </section>
+            
+            <hr>
+
+            <!-- Área de Exibição e Geração de Sensibilidade -->
+            <section id="sensitivity-output">
+                <h3>Sensibilidades Geradas</h3>
+                <div id="sensitivity-data">
+                    <!-- Os dados serão inseridos aqui pelo JS -->
+                    <p class="loading-text">Pesquise um dispositivo para gerar a primeira sensibilidade.</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="generate-button" class="btn-neon large-btn" disabled>Gerar Nova Sense</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Sensi Xitada | Analisado pelo Guru IA.</p>
+        </footer>
+    </div>
+
+    <!-- Inclusão do JavaScript -->
+    <script src="login.js"></script>
+    <script src="app.js"></script>
+    <!-- Opcional: Um terceiro arquivo para lógica de armazenamento e cálculos complexos -->
+    <script src="data_logic.js"></script>
+</body>
+</html>
