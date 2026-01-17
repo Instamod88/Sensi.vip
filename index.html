@@ -67,7 +67,35 @@
             
             <hr>
 
-            <!-- Área de Exibição e Geração de Sensibilidade -->
+            <!-- Área de Exibição ou e Geração de output">)
+
+<!-- NOVO: Área de Imagem do Dispositivo (Maior) -->
+<div id="device-image-display-container">
+    <img id="device-image-display" src="placeholder.png" alt="Imagem do Dispositivo Pesquisado" style="display: none;">
+    <p id="image-placeholder-text">A imagem do dispositivo aparecerá aqui após a pesquisa.</p>
+</div>
+
+<hr>
+
+<!-- Área de Exibição e Geração de Sensibilidade (Mantida e Expandida) -->
+<section id="sensitivity-output">
+    <h3>Sensibilidades Geradas</h3>
+    <div id="sensitivity-data">
+        <!-- Os dados de sensibilidade serão inseridos aqui pelo JS -->
+        <p class="loading-text">Pesquise um dispositivo para gerar a primeira sensibilidade.</p>
+    </div>
+    
+    <!-- NOVO: Placeholders de Som/Controle -->
+    <div id="sound-controls" style="text-align: center; margin-top: 20px; border-top: 1px solid rgba(0, 255, 153, 0.3);">
+        <p style="color: #aaa; margin: 10px 0;">Controle de Áudio (Para futura implementação de sons de jogo)</p>
+        <!-- Um áudio player oculto ou um botão de toggle seria adicionado aqui -->
+        <button id="toggle-sound" class="btn-neon">Ativar Sons (OFF)</button>
+    </div>
+
+    <div class="action-buttons">
+        <button id="generate-button" class="btn-neon large-btn" disabled>Gerar Nova Sense</button>
+    </div>
+</section>
             <section id="sensitivity-output">
                 <h3>Sensibilidades Geradas</h3>
                 <div id="sensitivity-data">
