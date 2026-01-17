@@ -156,7 +156,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     color: var(--neon-color);
 }
 
-/* ======================================= */
+/* ======================================== */
 /* 3. TELA DO GERADOR (Design Game) */
 /* ======================================= */
 
@@ -253,4 +253,38 @@ input[type="text"]:focus, input[type="password"]:focus {
 .info-text {
     color: #aaa;
     font-style: italic;
+}
+====================================== */
+/* 4. NOVOS ESTILOS PARA IMAGEM E ÁUDIO */
+/* ======================================= */
+
+#device-image-display-container {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px dashed var(--neon-color);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#device-image-display {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Efeito de brilho na imagem */
+    transition: transform 0.5s ease-in-out; /* Para futura animação de zoom */
+    display: block; /* Garante que a imagem seja tratada como bloco para o tamanho */
+    margin: 0 auto;
+}
+
+#image-placeholder-text {
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Estilo para o botão de som (Mantendo o tema neon) */
+#toggle-sound {
+    font-size: 0.9em;
+    padding: 8px 20px;
 }
