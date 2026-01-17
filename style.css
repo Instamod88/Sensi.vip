@@ -1,0 +1,256 @@
+/* ======================================= */
+/* 1. ESTILOS GLOBAIS E RESET BÁSICO */
+/* ======================================= */
+:root {
+    --neon-color: #00ff99;
+    --shadow-color: rgba(0, 255, 153, 0.7);
+    --bg-dark: #111111;
+    --bg-medium: #1a1a1a;
+    --text-light: #e0e0e0;
+    --font-primary: 'Orbitron', sans-serif; /* Fonte estilizada de game */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--neon-color), transparent);
+    margin: 30px 0;
+}
+
+/* ======================================= */
+/* 2. TELA DE LOGIN E EFEITO NEON TRANSPARENTE */
+/* ======================================= */
+
+#login-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    z-index: 10;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 40px var(--shadow-color);
+}
+
+.neon-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fundo neon transparente estilizado, como sugerido para iOS 26 */
+    background: rgba(20, 20, 20, 0.7); 
+    backdrop-filter: blur(8px); /* Efeito de transparência/desfoque */
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.login-box {
+    position: relative;
+    padding: 40px;
+    z-index: 2;
+    text-align: center;
+}
+
+.title-animation {
+    color: var(--neon-color);
+    text-shadow: 0 0 7px var(--neon-color), 0 0 15px var(--neon-color);
+    margin-bottom: 30px;
+    /* Animação de entrada: pulsando suavemente */
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from { text-shadow: 0 0 7px var(--neon-color); }
+    to { text-shadow: 0 0 15px var(--neon-color), 0 0 30px var(--neon-color); }
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: var(--neon-color);
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--neon-color);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: white;
+    box-shadow: 0 0 10px var(--neon-color);
+    outline: none;
+}
+
+.btn-neon {
+    background: none;
+    border: 2px solid var(--neon-color);
+    color: var(--neon-color);
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px var(--neon-color);
+}
+
+.btn-neon:hover {
+    background: var(--neon-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--neon-color), 0 0 40px var(--neon-color);
+}
+
+.message-error {
+    margin-top: 15px;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Links Sociais */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social-icon {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+.social-icon:hover {
+    color: var(--neon-color);
+}
+
+/* ======================================= */
+/* 3. TELA DO GERADOR (Design Game) */
+/* ======================================= */
+
+#generator-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--bg-medium);
+    border: 3px solid var(--neon-color);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 30px var(--shadow-color);
+    animation: fadeInScale 1s ease-out forwards; /* Animação de entrada no gerador */
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#generator-container h1 {
+    color: var(--neon-color);
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--shadow-color);
+}
+
+#device-display-name {
+    font-weight: bold;
+    color: white;
+}
+
+#search-area, #sensitivity-output {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 255, 153, 0.3);
+    border-radius: 10px;
+}
+
+#device-search-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+
+#search-result-info {
+    margin-top: 10px;
+    color: #ffdd57;
+    font-size: 0.9em;
+}
+
+/* Exibição da Sensibilidade */
+#sensitivity-data {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sense-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--neon-color);
+}
+
+.sense-name {
+    font-weight: bold;
+    color: var(--neon-color);
+}
+
+.sense-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    min-width: 80px;
+    text-align: center;
+    /* Efeito de destaque para os valores */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.large-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.info-text {
+    color: #aaa;
+    font-style: italic;
+}
